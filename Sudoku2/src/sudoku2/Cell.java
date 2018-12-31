@@ -17,22 +17,27 @@ import java.util.Set;
  *
  * @author peter
  */
+
+
 class Cell {
     private final static HashSet<Integer> UNIQUE_NUMBERS = new HashSet<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9));
     private final static int ROW_INDEX = 0;
     private final static int COLUMN_INDEX = 1;
     private final static int SUBGRID_INDEX = 2;
+    public enum CellValueType { UNKNOWN, GIVEN, DERIVED };
 
     private int rowIndex;
     private int columnIndex;
     public int value;
     private List<LinkedList<Cell>> lines;
     private HashSet<Integer> possible;
+    private CellValueType type;
 
     public Cell(int row, int column, int aValue){
         rowIndex = row;
         columnIndex = column;
         value = aValue;
+        type = CellValueType.UNKNOWN;
 
         lines = new ArrayList<>();
         
@@ -41,9 +46,13 @@ class Cell {
             possible = new HashSet<>(UNIQUE_NUMBERS);
         } else {
             possible = new HashSet<>();
+            type = CellValueType.GIVEN;
         }
     }
 
+    public LinkedList<Cell> getRow() {
+        return lines.get(ROW_INDEX);
+    }
     public void setRow(LinkedList<Cell> aRow) {
         lines.add(ROW_INDEX, aRow);
     }
@@ -60,6 +69,19 @@ class Cell {
         return possible;
     }
     
+    public CellValueType getType() {
+        return type;
+    }
+    
+    // set the value for the cell and clear the possible values
+    public void foundValue(int aValue) {
+        System.out.println("Found unique " + aValue + " in cell: " + toString());
+        value = aValue;
+        type = CellValueType.DERIVED;
+        possible.clear();
+    }
+    
+    // removes all the values in the input set from the possible set for this cell.
     public void removeMultipleValuesFromSet(Set<Integer> existing){
         possible.removeAll(existing);
         
@@ -69,12 +91,13 @@ class Cell {
             }
             possible.clear();
             System.out.print("Found " + value + " in cell: " + toString());
+            type = CellValueType.DERIVED;
 
             removeValue(value);
-            System.out.println("===");
         }
     }
 
+    // remove the single value in the input parameter from the possible set for this cell.
     public void removeOneValueFromSet(int aValue){
         possible.remove(aValue);
         
@@ -84,10 +107,14 @@ class Cell {
                 value = (int) i;
             }
             possible.clear();
+            type = CellValueType.DERIVED;
+            removeValue(value);
         }
         System.out.println(toString());
     }
     
+    // removes the passed in value from possible values for all cells 
+    // that are in the same column, row and subgrid as this cell.
     public void removeValue(int aValue) {
         System.out.print("\n>> RemoveValue() ");
         for (Cell cell: lines.get(ROW_INDEX)) {
@@ -108,6 +135,7 @@ class Cell {
         System.out.println("<< RemoveValue() ");
     }
     
+    @Override
     public String toString() {
         String ret;
         
