@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Sudoku</string>
+    <string name="button_original">Original</string>
+    <string name="button_new">New</string>
+</resources>
