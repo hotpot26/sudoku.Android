@@ -7,6 +7,486 @@
     tools:context=".OriginalPuzzleActivity">
 
     <View
+        android:id="@+id/border_3"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:background="#ccc"
+        app:layout_constraintEnd_toEndOf="@+id/textView_08"
+        app:layout_constraintBottom_toTopOf="@+id/textView_04"
+        app:layout_constraintStart_toStartOf="@+id/textView_00" />
+
+    <TextView
+        android:id="@+id/textView_00"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="36dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="8"
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/divider_1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toTopOf="@+id/textView_04" />
+
+    <TextView
+        android:id="@+id/textView_01"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="5"
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/divider_2"
+        app:layout_constraintTop_toTopOf="@+id/textView_04" />
+
+    <TextView
+        android:id="@+id/textView_02"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="6"
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/divider_3"
+        app:layout_constraintTop_toTopOf="@+id/textView_04" />
+
+    <TextView
+        android:id="@+id/textView_03"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/divider_4"
+        app:layout_constraintTop_toTopOf="@+id/textView_04" />
+
+    <TextView
+        android:id="@+id/textView_04"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="1"
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView_14" />
+
+    <TextView
+        android:id="@+id/textView_05"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="4"
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/divider_5"
+        app:layout_constraintTop_toTopOf="@+id/textView_14" />
+
+    <TextView
+        android:id="@+id/textView_06"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="7"
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/divider_6"
+        app:layout_constraintTop_toTopOf="@+id/textView_04" />
+
+    <TextView
+        android:id="@+id/textView_07"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="3"
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/divider_7"
+        app:layout_constraintTop_toTopOf="@+id/textView_04" />
+
+    <TextView
+        android:id="@+id/textView_08"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/divider_8"
+        app:layout_constraintTop_toTopOf="@+id/textView_04" />
+
+    <View
+        android:id="@+id/divider_11"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#ccc"
+        app:layout_constraintEnd_toEndOf="@+id/textView_48"
+        app:layout_constraintBottom_toTopOf="@+id/textView_14"
+        app:layout_constraintStart_toStartOf="@+id/textView_40" />
+
+    <TextView
+        android:id="@+id/textView_10"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="36dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/divider_1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toTopOf="@+id/textView_14" />
+
+    <TextView
+        android:id="@+id/textView_11"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="9"
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/divider_2"
+        app:layout_constraintTop_toTopOf="@+id/textView_14" />
+
+    <TextView
+        android:id="@+id/textView_12"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/divider_3"
+        app:layout_constraintTop_toTopOf="@+id/textView_14" />
+
+    <TextView
+        android:id="@+id/textView_13"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/divider_4"
+        app:layout_constraintTop_toTopOf="@+id/textView_14" />
+
+    <TextView
+        android:id="@+id/textView_14"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView_24" />
+
+    <TextView
+        android:id="@+id/textView_15"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/divider_5"
+        app:layout_constraintTop_toTopOf="@+id/textView_14" />
+
+    <TextView
+        android:id="@+id/textView_16"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/divider_6"
+        app:layout_constraintTop_toTopOf="@+id/textView_14" />
+
+    <TextView
+        android:id="@+id/textView_17"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/divider_7"
+        app:layout_constraintTop_toTopOf="@+id/textView_14" />
+
+    <TextView
+        android:id="@+id/textView_18"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/divider_8"
+        app:layout_constraintTop_toTopOf="@+id/textView_14" />
+
+    <View
+        android:id="@+id/divider_12"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#ccc"
+        app:layout_constraintEnd_toEndOf="@+id/textView_48"
+        app:layout_constraintBottom_toTopOf="@+id/textView_24"
+        app:layout_constraintStart_toStartOf="@+id/textView_40" />
+
+    <TextView
+        android:id="@+id/textView_20"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="36dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="2"
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/divider_1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toTopOf="@+id/textView_24" />
+
+    <TextView
+        android:id="@+id/textView_21"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="4"
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/divider_2"
+        app:layout_constraintTop_toTopOf="@+id/textView_24" />
+
+    <TextView
+        android:id="@+id/textView_22"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/divider_3"
+        app:layout_constraintTop_toTopOf="@+id/textView_24" />
+
+    <TextView
+        android:id="@+id/textView_23"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/divider_4"
+        app:layout_constraintTop_toTopOf="@+id/textView_24" />
+
+    <TextView
+        android:id="@+id/textView_24"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView_34" />
+
+    <TextView
+        android:id="@+id/textView_25"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/divider_5"
+        app:layout_constraintTop_toTopOf="@+id/textView_24" />
+
+    <TextView
+        android:id="@+id/textView_26"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="1"
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/divider_6"
+        app:layout_constraintTop_toTopOf="@+id/textView_24" />
+
+    <TextView
+        android:id="@+id/textView_27"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="6"
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/divider_7"
+        app:layout_constraintTop_toTopOf="@+id/textView_24" />
+
+    <TextView
+        android:id="@+id/textView_28"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/divider_8"
+        app:layout_constraintTop_toTopOf="@+id/textView_24" />
+
+    <View
+        android:id="@+id/divider_13"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:background="#ccc"
+        app:layout_constraintEnd_toEndOf="@+id/textView_48"
+        app:layout_constraintBottom_toTopOf="@+id/textView_34"
+        app:layout_constraintStart_toStartOf="@+id/textView_40" />
+
+    <TextView
+        android:id="@+id/textView_30"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="36dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/divider_1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toTopOf="@+id/textView_34" />
+
+    <TextView
+        android:id="@+id/textView_31"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="6"
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/divider_2"
+        app:layout_constraintTop_toTopOf="@+id/textView_34" />
+
+    <TextView
+        android:id="@+id/textView_32"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="2"
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/divider_3"
+        app:layout_constraintTop_toTopOf="@+id/textView_34" />
+
+    <TextView
+        android:id="@+id/textView_33"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/divider_4"
+        app:layout_constraintTop_toTopOf="@+id/textView_34" />
+
+    <TextView
+        android:id="@+id/textView_34"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="5"
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView_44" />
+
+    <TextView
+        android:id="@+id/textView_35"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="9"
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/divider_5"
+        app:layout_constraintTop_toTopOf="@+id/textView_34" />
+
+    <TextView
+        android:id="@+id/textView_36"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="3"
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/divider_6"
+        app:layout_constraintTop_toTopOf="@+id/textView_34" />
+
+    <TextView
+        android:id="@+id/textView_37"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/divider_7"
+        app:layout_constraintTop_toTopOf="@+id/textView_34" />
+
+    <TextView
+        android:id="@+id/textView_38"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/divider_8"
+        app:layout_constraintTop_toTopOf="@+id/textView_34" />
+
+    <View
         android:id="@+id/divider_14"
         android:layout_width="0dp"
         android:layout_height="1dp"
@@ -20,9 +500,9 @@
         android:layout_width="3dp"
         android:layout_height="0dp"
         android:background="#ccc"
-        app:layout_constraintBottom_toBottomOf="@+id/textView_80"
-        app:layout_constraintEnd_toStartOf="@+id/textView_70"
-        app:layout_constraintTop_toTopOf="@+id/textView_44" />
+        app:layout_constraintBottom_toBottomOf="@+id/textView_84"
+        app:layout_constraintEnd_toStartOf="@+id/textView_40"
+        app:layout_constraintTop_toTopOf="@+id/textView_04" />
 
     <TextView
         android:id="@+id/textView_40"
@@ -45,7 +525,7 @@
         android:background="#ccc"
         app:layout_constraintBottom_toBottomOf="@+id/textView_81"
         app:layout_constraintEnd_toStartOf="@+id/textView_41"
-        app:layout_constraintTop_toTopOf="@+id/textView_44" />
+        app:layout_constraintTop_toTopOf="@+id/textView_04" />
 
     <TextView
         android:id="@+id/textView_41"
@@ -66,7 +546,7 @@
         android:background="#ccc"
         app:layout_constraintBottom_toBottomOf="@+id/textView_82"
         app:layout_constraintEnd_toStartOf="@+id/textView_42"
-        app:layout_constraintTop_toTopOf="@+id/textView_44" />
+        app:layout_constraintTop_toTopOf="@+id/textView_04" />
 
     <TextView
         android:id="@+id/textView_42"
@@ -87,7 +567,7 @@
         android:background="#ccc"
         app:layout_constraintBottom_toBottomOf="@+id/textView_83"
         app:layout_constraintEnd_toStartOf="@+id/textView_43"
-        app:layout_constraintTop_toTopOf="@+id/textView_44" />
+        app:layout_constraintTop_toTopOf="@+id/textView_04" />
 
     <TextView
         android:id="@+id/textView_43"
@@ -108,7 +588,7 @@
         android:background="#ccc"
         app:layout_constraintBottom_toBottomOf="@+id/textView_84"
         app:layout_constraintEnd_toStartOf="@+id/textView_44"
-        app:layout_constraintTop_toTopOf="@+id/textView_44" />
+        app:layout_constraintTop_toTopOf="@+id/textView_04" />
 
     <TextView
         android:id="@+id/textView_44"
@@ -131,7 +611,7 @@
         android:background="#ccc"
         app:layout_constraintBottom_toBottomOf="@+id/textView_85"
         app:layout_constraintStart_toEndOf="@+id/textView_44"
-        app:layout_constraintTop_toTopOf="@+id/textView_44" />
+        app:layout_constraintTop_toTopOf="@+id/textView_04" />
 
     <TextView
         android:id="@+id/textView_45"
@@ -152,7 +632,7 @@
         android:background="#ccc"
         app:layout_constraintBottom_toBottomOf="@+id/textView_86"
         app:layout_constraintStart_toEndOf="@+id/textView_45"
-        app:layout_constraintTop_toTopOf="@+id/textView_44" />
+        app:layout_constraintTop_toTopOf="@+id/textView_04" />
 
     <TextView
         android:id="@+id/textView_46"
@@ -173,7 +653,7 @@
         android:background="#ccc"
         app:layout_constraintBottom_toBottomOf="@+id/textView_87"
         app:layout_constraintStart_toEndOf="@+id/textView_46"
-        app:layout_constraintTop_toTopOf="@+id/textView_44" />
+        app:layout_constraintTop_toTopOf="@+id/textView_04" />
 
     <TextView
         android:id="@+id/textView_47"
@@ -194,7 +674,7 @@
         android:background="#ccc"
         app:layout_constraintBottom_toBottomOf="@+id/textView_88"
         app:layout_constraintStart_toEndOf="@+id/textView_47"
-        app:layout_constraintTop_toTopOf="@+id/textView_44" />
+        app:layout_constraintTop_toTopOf="@+id/textView_04" />
 
     <TextView
         android:id="@+id/textView_48"
@@ -213,9 +693,9 @@
         android:layout_width="3dp"
         android:layout_height="0dp"
         android:background="#ccc"
-        app:layout_constraintBottom_toBottomOf="@+id/textView_88"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_84"
         app:layout_constraintStart_toEndOf="@+id/textView_48"
-        app:layout_constraintTop_toTopOf="@+id/textView_44" />
+        app:layout_constraintTop_toTopOf="@+id/textView_04" />
 
     <View
         android:id="@+id/divider_15"
