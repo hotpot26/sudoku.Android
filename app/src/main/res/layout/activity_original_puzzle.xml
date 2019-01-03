@@ -6,114 +6,122 @@
     android:layout_height="match_parent"
     tools:context=".OriginalPuzzleActivity">
 
+    <View
+        android:id="@+id/border_14"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#ccc"
+        app:layout_constraintEnd_toEndOf="@+id/textView_48"
+        app:layout_constraintBottom_toTopOf="@+id/textView_44"
+        app:layout_constraintStart_toStartOf="@+id/textView_40" />
+
+    <View
+        android:id="@+id/border_1"
+        android:layout_width="2dp"
+        android:layout_height="0dp"
+        android:background="#ccc"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_50"
+        app:layout_constraintEnd_toStartOf="@+id/textView_40"
+        app:layout_constraintTop_toTopOf="@+id/textView_44" />
+
     <TextView
-        android:id="@+id/textView_00"
+        android:id="@+id/textView_40"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="76dp"
         android:gravity="center"
         android:maxLines="1"
-        android:text="8"
+        android:text=""
         android:textColor="#777"
         android:textSize="22sp"
         app:layout_constraintEnd_toStartOf="@+id/divider_1"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/textView_44" />
 
     <View
         android:id="@+id/divider_1"
         android:layout_width="1dp"
         android:layout_height="0dp"
         android:background="#ccc"
-        app:layout_constraintBottom_toBottomOf="@+id/textView_01"
-        app:layout_constraintEnd_toStartOf="@+id/textView_01"
-        app:layout_constraintStart_toEndOf="@+id/textView_00"
-        app:layout_constraintTop_toTopOf="@+id/textView_01" />
+        app:layout_constraintBottom_toBottomOf="@+id/textView_51"
+        app:layout_constraintEnd_toStartOf="@+id/textView_41"
+        app:layout_constraintTop_toTopOf="@+id/textView_44" />
 
     <TextView
-        android:id="@+id/textView_01"
+        android:id="@+id/textView_41"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_marginTop="76dp"
         android:gravity="center"
         android:maxLines="1"
-        android:text="5"
+        android:text="3"
         android:textColor="#777"
         android:textSize="22sp"
-        app:layout_constraintEnd_toStartOf="@+id/textView_02"
-        app:layout_constraintStart_toEndOf="@+id/textView_00"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/divider_2"
+        app:layout_constraintTop_toTopOf="@+id/textView_44" />
 
     <View
         android:id="@+id/divider_2"
         android:layout_width="1dp"
         android:layout_height="0dp"
         android:background="#ccc"
-        app:layout_constraintBottom_toBottomOf="@+id/textView_02"
-        app:layout_constraintEnd_toStartOf="@+id/textView_02"
-        app:layout_constraintStart_toEndOf="@+id/textView_01"
-        app:layout_constraintTop_toTopOf="@+id/textView_02" />
+        app:layout_constraintBottom_toBottomOf="@+id/textView_52"
+        app:layout_constraintEnd_toStartOf="@+id/textView_42"
+        app:layout_constraintTop_toTopOf="@+id/textView_44" />
 
     <TextView
-        android:id="@+id/textView_02"
+        android:id="@+id/textView_42"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_marginTop="76dp"
         android:gravity="center"
         android:maxLines="1"
-        android:text="6"
+        android:text="1"
         android:textColor="#777"
         android:textSize="22sp"
-        app:layout_constraintEnd_toStartOf="@+id/textView_03"
-        app:layout_constraintStart_toEndOf="@+id/textView_01"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/divider_3"
+        app:layout_constraintTop_toTopOf="@+id/textView_44" />
 
     <View
         android:id="@+id/divider_3"
-        android:layout_width="1dp"
+        android:layout_width="2dp"
         android:layout_height="0dp"
         android:background="#ccc"
-        app:layout_constraintBottom_toBottomOf="@+id/textView_03"
-        app:layout_constraintEnd_toStartOf="@+id/textView_03"
-        app:layout_constraintStart_toEndOf="@+id/textView_02"
-        app:layout_constraintTop_toTopOf="@+id/textView_03" />
+        app:layout_constraintBottom_toBottomOf="@+id/textView_53"
+        app:layout_constraintEnd_toStartOf="@+id/textView_43"
+        app:layout_constraintTop_toTopOf="@+id/textView_44" />
 
     <TextView
-        android:id="@+id/textView_03"
+        android:id="@+id/textView_43"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_marginTop="76dp"
         android:gravity="center"
-        android:maxLines="1"
+        android:maxLines="8"
         android:text=""
         android:textColor="#777"
         android:textSize="22sp"
-        app:layout_constraintStart_toEndOf="@+id/textView_02"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/divider_4"
+        app:layout_constraintTop_toTopOf="@+id/textView_44" />
 
     <View
         android:id="@+id/divider_4"
         android:layout_width="1dp"
         android:layout_height="0dp"
         android:background="#ccc"
-        app:layout_constraintBottom_toBottomOf="@+id/textView_04"
-        app:layout_constraintEnd_toStartOf="@+id/textView_04"
-        app:layout_constraintStart_toEndOf="@+id/textView_03"
-        app:layout_constraintTop_toTopOf="@+id/textView_04" />
+        app:layout_constraintBottom_toBottomOf="@+id/textView_54"
+        app:layout_constraintEnd_toStartOf="@+id/textView_44"
+        app:layout_constraintTop_toTopOf="@+id/textView_44" />
 
     <TextView
-        android:id="@+id/textView_04"
+        android:id="@+id/textView_44"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_marginTop="76dp"
         android:gravity="center"
         android:maxLines="1"
-        android:text="1"
+        android:text=""
         android:textColor="#777"
         android:textSize="22sp"
-        app:layout_constraintStart_toEndOf="@+id/textView_03"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
@@ -121,91 +129,223 @@
         android:layout_width="1dp"
         android:layout_height="0dp"
         android:background="#ccc"
-        app:layout_constraintBottom_toBottomOf="@+id/textView_05"
-        app:layout_constraintEnd_toStartOf="@+id/textView_05"
-        app:layout_constraintStart_toEndOf="@+id/textView_04"
-        app:layout_constraintTop_toTopOf="@+id/textView_05" />
+        app:layout_constraintBottom_toBottomOf="@+id/textView_55"
+        app:layout_constraintStart_toEndOf="@+id/textView_44"
+        app:layout_constraintTop_toTopOf="@+id/textView_44" />
 
     <TextView
-        android:id="@+id/textView_05"
+        android:id="@+id/textView_45"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_marginTop="76dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="2"
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/divider_5"
+        app:layout_constraintTop_toTopOf="@+id/textView_44" />
+
+    <View
+        android:id="@+id/divider_6"
+        android:layout_width="2dp"
+        android:layout_height="0dp"
+        android:background="#ccc"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_56"
+        app:layout_constraintStart_toEndOf="@+id/textView_45"
+        app:layout_constraintTop_toTopOf="@+id/textView_44" />
+
+    <TextView
+        android:id="@+id/textView_46"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
         android:gravity="center"
         android:maxLines="1"
         android:text="4"
         android:textColor="#777"
         android:textSize="22sp"
-        app:layout_constraintStart_toEndOf="@+id/textView_04"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/divider_6"
-        android:layout_width="1dp"
-        android:layout_height="0dp"
-        android:background="#ccc"
-        app:layout_constraintBottom_toBottomOf="@+id/textView_06"
-        app:layout_constraintEnd_toStartOf="@+id/textView_06"
-        app:layout_constraintStart_toEndOf="@+id/textView_05"
-        app:layout_constraintTop_toTopOf="@+id/textView_06" />
-
-    <TextView
-        android:id="@+id/textView_06"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="76dp"
-        android:gravity="center"
-        android:maxLines="1"
-        android:text="7"
-        android:textColor="#777"
-        android:textSize="22sp"
-        app:layout_constraintStart_toEndOf="@+id/textView_05"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/divider_6"
+        app:layout_constraintTop_toTopOf="@+id/textView_44" />
 
     <View
         android:id="@+id/divider_7"
         android:layout_width="1dp"
         android:layout_height="0dp"
         android:background="#ccc"
-        app:layout_constraintBottom_toBottomOf="@+id/textView_07"
-        app:layout_constraintEnd_toStartOf="@+id/textView_07"
-        app:layout_constraintStart_toEndOf="@+id/textView_06"
-        app:layout_constraintTop_toTopOf="@+id/textView_07" />
+        app:layout_constraintBottom_toBottomOf="@+id/textView_57"
+        app:layout_constraintStart_toEndOf="@+id/textView_46"
+        app:layout_constraintTop_toTopOf="@+id/textView_44" />
 
     <TextView
-        android:id="@+id/textView_07"
+        android:id="@+id/textView_47"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_marginTop="76dp"
         android:gravity="center"
         android:maxLines="1"
-        android:text="3"
+        android:text="5"
         android:textColor="#777"
         android:textSize="22sp"
-        app:layout_constraintStart_toEndOf="@+id/textView_06"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/divider_7"
+        app:layout_constraintTop_toTopOf="@+id/textView_44" />
 
     <View
         android:id="@+id/divider_8"
         android:layout_width="1dp"
         android:layout_height="0dp"
         android:background="#ccc"
-        app:layout_constraintBottom_toBottomOf="@+id/textView_08"
-        app:layout_constraintEnd_toStartOf="@+id/textView_08"
-        app:layout_constraintStart_toEndOf="@+id/textView_07"
-        app:layout_constraintTop_toTopOf="@+id/textView_08" />
+        app:layout_constraintBottom_toBottomOf="@+id/textView_58"
+        app:layout_constraintStart_toEndOf="@+id/textView_47"
+        app:layout_constraintTop_toTopOf="@+id/textView_44" />
 
     <TextView
-        android:id="@+id/textView_08"
+        android:id="@+id/textView_48"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_marginTop="76dp"
         android:gravity="center"
         android:maxLines="1"
         android:text=""
         android:textColor="#777"
         android:textSize="22sp"
-        app:layout_constraintStart_toEndOf="@+id/textView_07"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/divider_8"
+        app:layout_constraintTop_toTopOf="@+id/textView_44" />
+
+    <View
+        android:id="@+id/border_3"
+        android:layout_width="2dp"
+        android:layout_height="0dp"
+        android:background="#ccc"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_58"
+        app:layout_constraintStart_toEndOf="@+id/textView_48"
+        app:layout_constraintTop_toTopOf="@+id/textView_44" />
+
+    <View
+        android:id="@+id/border_15"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#ccc"
+        app:layout_constraintEnd_toEndOf="@+id/textView_48"
+        app:layout_constraintTop_toBottomOf="@+id/textView_44"
+        app:layout_constraintStart_toStartOf="@+id/textView_40" />
+
+
+    <TextView
+        android:id="@+id/textView_50"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="36dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/divider_1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toTopOf="@+id/textView_54" />
+
+    <TextView
+        android:id="@+id/textView_51"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/divider_2"
+        app:layout_constraintTop_toTopOf="@+id/textView_54" />
+
+    <TextView
+        android:id="@+id/textView_52"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="5"
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/divider_3"
+        app:layout_constraintTop_toTopOf="@+id/textView_54" />
+
+    <TextView
+        android:id="@+id/textView_53"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="3"
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/divider_4"
+        app:layout_constraintTop_toTopOf="@+id/textView_54" />
+
+    <TextView
+        android:id="@+id/textView_54"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="4"
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_44" />
+
+    <TextView
+        android:id="@+id/textView_55"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/divider_5"
+        app:layout_constraintTop_toTopOf="@+id/textView_54" />
+
+    <TextView
+        android:id="@+id/textView_56"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="9"
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/divider_6"
+        app:layout_constraintTop_toTopOf="@+id/textView_54" />
+
+    <TextView
+        android:id="@+id/textView_57"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="2"
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/divider_7"
+        app:layout_constraintTop_toTopOf="@+id/textView_54" />
+
+    <TextView
+        android:id="@+id/textView_58"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="#777"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/divider_8"
+        app:layout_constraintTop_toTopOf="@+id/textView_54" />
+
+    <View
+        android:id="@+id/border_16"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="#ccc"
+        app:layout_constraintEnd_toEndOf="@+id/textView_48"
+        app:layout_constraintTop_toBottomOf="@+id/textView_54"
+        app:layout_constraintStart_toStartOf="@+id/textView_40" />
+
 
 </android.support.constraint.ConstraintLayout>
