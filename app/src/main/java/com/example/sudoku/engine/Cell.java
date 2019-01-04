@@ -20,11 +20,12 @@ import java.util.Set;
 
 
 class Cell {
+    public enum CellValueType { UNKNOWN, GIVEN, DERIVED }
+
     private final static HashSet<Integer> UNIQUE_NUMBERS = new HashSet<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9));
     private final static int ROW_INDEX = 0;
     private final static int COLUMN_INDEX = 1;
     private final static int SUBGRID_INDEX = 2;
-    public enum CellValueType { UNKNOWN, GIVEN, DERIVED };
 
     private int rowIndex;
     private int columnIndex;
@@ -74,49 +75,46 @@ class Cell {
     }
     
     // set the value for the cell and clear the possible values
+    // removes this value from the associating row, column and subgrid
     public void foundValue(int aValue) {
-        System.out.println("Found unique " + aValue + " in cell: " + toString());
+        System.out.println("foundValue(" + aValue + ") in cell: " + toString());
         value = aValue;
         type = CellValueType.DERIVED;
         possible.clear();
+
+        // removes this value from the associating row, column and subgrid
+        removeValue(value);
     }
     
     // removes all the values in the input set from the possible set for this cell.
     public void removeMultipleValuesFromSet(Set<Integer> existing){
+        System.out.println("removeMultipleValuesFromSet(" + existing.toString() + ") in cell " + toString());
         possible.removeAll(existing);
-        
+
+        // if only one value left in the possible set, then we have derived a value.
         if (possible.size() == 1) {
             for (Integer aValue : possible) {
-                value = (int) aValue;
+                foundValue(aValue);
             }
-            possible.clear();
-            System.out.print("Found " + value + " in cell: " + toString());
-            type = CellValueType.DERIVED;
-
-            removeValue(value);
         }
     }
 
     // remove the single value in the input parameter from the possible set for this cell.
     public void removeOneValueFromSet(int aValue){
+        System.out.println("removeOneValueFromSet(" + aValue + ") in cell " + toString());
         possible.remove(aValue);
         
         if (possible.size() == 1) {
-            System.out.print("sudoku2.Cell.removeOneValueFromSet(): removing value " + aValue);
             for (Integer i : possible) {
-                value = (int) i;
+                foundValue(i);
             }
-            possible.clear();
-            type = CellValueType.DERIVED;
-            removeValue(value);
         }
-        System.out.println(toString());
     }
     
     // removes the passed in value from possible values for all cells 
     // that are in the same column, row and subgrid as this cell.
     public void removeValue(int aValue) {
-        System.out.print("\n>> RemoveValue() ");
+        System.out.println(">> RemoveValue(" + aValue + ") from " + toString());
         for (Cell cell: lines.get(ROW_INDEX)) {
             if (cell.value == 0) {
                 cell.removeOneValueFromSet(aValue);
@@ -132,7 +130,7 @@ class Cell {
                 cell.removeOneValueFromSet(aValue);
             }
         }
-        System.out.println("<< RemoveValue() ");
+        System.out.println("<< RemoveValue(" + aValue + ") from " + toString());
     }
     
     @Override
