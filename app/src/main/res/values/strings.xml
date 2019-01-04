@@ -3,5 +3,6 @@
     <string name="button_original">Original</string>
     <string name="button_new">New</string>
     <string name="button_solve">Solve</string>
-    <string name="no_solution">The Puzzle has no solution.</string>
+    <string name="message_no_solution">The puzzle has outsmarted me.</string>
+    <string name="message_solved">Solved!</string>
 </resources>

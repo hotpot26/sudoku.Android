@@ -19,7 +19,7 @@ import java.util.Set;
  */
 
 
-class Cell {
+public class Cell {
     public enum CellValueType { UNKNOWN, GIVEN, DERIVED }
 
     private final static HashSet<Integer> UNIQUE_NUMBERS = new HashSet<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9));
@@ -54,6 +54,15 @@ class Cell {
     public LinkedList<Cell> getRow() {
         return lines.get(ROW_INDEX);
     }
+
+    public int getRowIndex() {
+        return rowIndex;
+    }
+
+    public int getColumnIndex() {
+        return columnIndex;
+    }
+
     public void setRow(LinkedList<Cell> aRow) {
         lines.add(ROW_INDEX, aRow);
     }

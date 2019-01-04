@@ -15,7 +15,7 @@ import java.util.Set;
  *
  * @author yiwen
  */
-class SudokuEngine {
+public class SudokuEngine {
     private final int NUMBER_OF_CELLS = 9;
     private final int NUMBER_OF_CELLS_IN_SUBGRID = 3;
 
@@ -131,6 +131,10 @@ class SudokuEngine {
         }
 
         return ret;
+    }
+
+    public List<LinkedList<Cell>> getRows() {
+        return rows;
     }
 
     // fill all possible numbers within the linked list.

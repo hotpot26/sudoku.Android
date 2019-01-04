@@ -95,7 +95,7 @@
         android:textColor="#777"
         android:textSize="22sp"
         app:layout_constraintStart_toEndOf="@+id/divider_5"
-        app:layout_constraintTop_toTopOf="@+id/textView_14" />
+        app:layout_constraintTop_toTopOf="@+id/textView_04" />
 
     <TextView
         android:id="@+id/textView_06"
