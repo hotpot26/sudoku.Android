@@ -2,4 +2,5 @@
     <string name="app_name">Sudoku</string>
     <string name="button_original">Original</string>
     <string name="button_new">New</string>
+    <string name="button_solve">Solve</string>
 </resources>
