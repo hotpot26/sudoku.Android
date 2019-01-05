@@ -11,6 +11,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class PuzzleActivity extends AppCompatActivity {
+    public final int NUMBER_OF_CELLS = 9;
+
     SudokuEngine engine = new SudokuEngine();
 
     @Override
@@ -21,10 +23,10 @@ public class PuzzleActivity extends AppCompatActivity {
 
     // show the grid onto the display
     protected String[][] convertGridToString(int[][] grid) {
-        String [][] gridInString = new String[9][9];
+        String [][] gridInString = new String[NUMBER_OF_CELLS][NUMBER_OF_CELLS];
 
-        for (int rowIndex = 0; rowIndex < 9; rowIndex++) {
-            for (int columnIndex = 0; columnIndex < 9; columnIndex++) {
+        for (int rowIndex = 0; rowIndex < NUMBER_OF_CELLS; rowIndex++) {
+            for (int columnIndex = 0; columnIndex < NUMBER_OF_CELLS; columnIndex++) {
                 if (grid[rowIndex][columnIndex] == 0) {
                     gridInString[rowIndex][columnIndex] = "";
                 } else {
@@ -37,7 +39,7 @@ public class PuzzleActivity extends AppCompatActivity {
     }
 
     protected String[][] convertListToString(List<LinkedList<Cell>> rows) {
-        String [][] gridInString = new String[9][9];
+        String [][] gridInString = new String[NUMBER_OF_CELLS][NUMBER_OF_CELLS];
 
         for (LinkedList<Cell> row : rows) {
             for (Cell cell : row) {

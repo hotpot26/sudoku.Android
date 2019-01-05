@@ -114,6 +114,8 @@ public class SudokuEngine {
             } else {
                 // still unknown cells. prepare for backtracking algorithm by using a value
                 // from the first cell that has two possible values.
+                // create a list of unknown cells
+                //
                 ret = 1;
                 System.out.println("breaking out here for now to avoid infinite loop");
                 break;
@@ -167,9 +169,12 @@ public class SudokuEngine {
 
     /**
      * This method returns the puzzle including all derived cells.
+     * Used by the two PuzzleActivity subclasses.
+     * {@see OriginalPuzzleActivity::solvePuzzle()}
+     * {@see NewPuzzleActivity::solvePuzzle()}
      * @return the grid in form of a List of LinkedList of Cells.
      */
-    protected List<LinkedList<Cell>> getRows() {
+    public List<LinkedList<Cell>> getRows() {
         return rows;
     }
 
