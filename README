@@ -1,0 +1,37 @@
+This document describes the implementation and information on 
+the Sudoku Solver.
+
+1. Implementation
+The Sudoku Solver is an Android App. Its main screen displays two buttons, 'ORIGINAL' and 'NEW'. Each button
+displays a Sudoku grid, with a 'SOLVE' button on the bottom of the screen. 
+
+Android studio was used for development and testing of the app. The grid.xml is a shared resource between the 
+new and the original Sudoku puzzle Activities. ConstraintLayout is used in the grid resource definition. Both 
+mentioned Activity use SnackBar to display success or failure messages of the displayed result in the puzzle.
+
+The display of the puzzle result onto the board is supported by a base class, PuzzleActivity. NewPuzzleActivity
+and OriginalPuzzleActivity are subclasses of the PuzzleActivity.
+
+The Engine of the solver is located under com.example.sudoku.engine. It has two public methods: initialize() 
+and solve(). JUnit test cases are used to test the engine against various puzzles.
+
+The implemented algorithm is based on how I manually solve Sudoku in the past. It only has a few of the sub solving 
+algorithms implemented. It is mostly similar to the approach of the Cook's algorithm 
+(http://www.ams.org/notices/200904/rtx090400460p.pdf, and Norwig's (http://norvig.com/sudoku.html). 
+My implementation does not include the last step of the forementioned algorithms, which is to use 
+backtracking to find further unknown values, after the solution has somewhat stalled.
+
+As a result, the initial puzzle included in the assignment is only partially solved by my implementation.
+
+2. App build and deployment
+The code base can be found under: https://github.com/hotpot26/sudoku.Android/tree/master. Once the repository 
+has been cloned, Android Studio can be used to open the project and to build the project. 
+
+Use the Run feature from Android Studio to launch the app on either the Pixel API 25 (Android 7.1.1) Emulator,
+or on a connected Android device via USB (with USB debugging turned on). 
+
+4. How to access the app
+The App will be automatically started with the Instant Run feature in the Android Studio.
+
+5. Additional documentation
+Brief detailed design description is available via JavaDoc.
