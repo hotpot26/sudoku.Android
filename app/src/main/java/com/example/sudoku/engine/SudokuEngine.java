@@ -97,14 +97,41 @@ public class SudokuEngine {
             return 3;
         }
 
+        int previous = 0;
+        while ((unknown != 0) && (previous != unknown)) {
+            System.out.println("Top while loop");
+            fillGrid();
+            previous = unknown;
+
+            // check only if all the Cells are filled.
+            if (isFilled()) {
+                if (isSolved()) {
+                    ret = 0;
+                } else {
+                    System.out.println("Solution is invalid");
+                    ret = 2;
+                }
+            } else {
+                // still unknown cells. prepare for backtracking algorithm by using a value
+                // from the first cell that has two possible values.
+                ret = 1;
+                System.out.println("breaking out here for now to avoid infinite loop");
+                break;
+                // backup the possible set first.
+            }
+        }
+
+        return ret;
+    }
+
+    private void fillGrid() {
         // find possible numbers based on cells in row
         // should iterate until unknown is zero or unknown is unchanged at which
         // case there is no solution.
         int previousUnknown = 0;
         int iterations = 0;
-        boolean filled = false;
-        boolean solved = false;
 
+        boolean filled = false;
         while (!filled && (previousUnknown != unknown)) {
             System.out.println("i = " + iterations);
             List<LinkedList<Cell>> orientation;
@@ -123,7 +150,7 @@ public class SudokuEngine {
                         orientation = subgrids;
                         break;
                 }
-                        
+
                 for (LinkedList<Cell> line : orientation) {
                     fillAllPossibleNumbers(line);
                     findPreemptiveSet(line);
@@ -136,23 +163,6 @@ public class SudokuEngine {
             printResult();
             iterations ++;
         }
-
-        // check only if all the Cells are filled.
-        if (filled) {
-            if (isSolved()) {
-                ret = 0;
-            } else {
-                System.out.println("Solution is invalid");
-                ret = 2;
-            }
-        } else if (previousUnknown == unknown) {
-            // the program has filled all it can. Now use backtracking algo
-            // to attempt to fill the rest of the puzzle.
-            ret = 1;
-            System.out.println("Unable to solve the puzzle");
-        }
-
-        return ret;
     }
 
     /**

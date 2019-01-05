@@ -62,7 +62,7 @@ import static org.junit.Assert.assertEquals;
     public void originalPuzzle3Test() {
         int [][] grid = {
                 {8, 5, 6, 0, 1, 4, 7, 3, 0},
-                {0, 9, 3, 5, 0, 0, 0, 0, 0},
+                {0, 9, 0, 5, 0, 0, 0, 0, 0},
                 {2, 4, 0, 0, 0, 0, 1, 6, 0},
                 {0, 6, 2, 0, 5, 9, 3, 0, 0},
                 {0, 3, 1, 8, 0, 2, 4, 5, 0},

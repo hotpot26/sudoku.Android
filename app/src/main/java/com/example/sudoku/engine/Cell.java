@@ -14,7 +14,8 @@ import java.util.Set;
 
 
 /**
- *
+ * Each instance of the Cell represents one space in the grid. The Cells are instantiated during
+ * the SudokuEngine initialization stage. {@see SudokuEngine.initialization()}.
  * @author yiwen
  */
 
