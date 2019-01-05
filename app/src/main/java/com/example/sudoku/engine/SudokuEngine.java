@@ -180,7 +180,7 @@ public class SudokuEngine {
         // for every cell with possible values, remove the known numbers 
         for (Cell cell : line) {
             if (cell.getValue() == 0) {
-                cell.removeMultipleValuesFromSet(existingNumbers);
+                cell.removeSetFromPossible(existingNumbers);
             }
             System.out.println(cell.toString());
         }
@@ -237,7 +237,7 @@ public class SudokuEngine {
     /**
      * find preemptive set of PREEMPTIVE_SET_SIZE within the linked list
      * remove the preemptive set from the associated row, column and subgrid.
-     * {@see Cell.removeMultipleValuesFromSet()}
+     * {@see Cell.removeSetFromPossible()}
      * @param line the row, column or subgrid that this operations applies to.
      */
     private void findPreemptiveSet(LinkedList<Cell> line) {
@@ -265,7 +265,7 @@ public class SudokuEngine {
         if (foundPreemptiveSet) {
             for (Cell cell : line) {
                 if ((cell.getValue() == 0) && (cell.getPossibleValues().equals(previousPossibleValue) == false)) {
-                    cell.removeMultipleValuesFromSet(previousPossibleValue);
+                    cell.removeSetFromPossible(previousPossibleValue);
                 }
             }
         }
