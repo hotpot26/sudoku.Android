@@ -41,10 +41,10 @@ public class PuzzleActivity extends AppCompatActivity {
 
         for (LinkedList<Cell> row : rows) {
             for (Cell cell : row) {
-                if (cell.value == 0) {
+                if (cell.getValue() == 0) {
                     gridInString[cell.getRowIndex()][cell.getColumnIndex()] = "";
                 } else {
-                    gridInString[cell.getRowIndex()][cell.getColumnIndex()] = String.valueOf(cell.value);
+                    gridInString[cell.getRowIndex()][cell.getColumnIndex()] = String.valueOf(cell.getValue());
                 }
             }
         }

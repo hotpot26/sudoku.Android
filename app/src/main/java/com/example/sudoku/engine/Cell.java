@@ -29,11 +29,18 @@ public class Cell {
 
     private int rowIndex;
     private int columnIndex;
-    public int value;
+    private int value;
     private List<LinkedList<Cell>> lines;
     private HashSet<Integer> possible;
     private CellValueType type;
 
+    /**
+     * Constructor
+     * @param row the index of the row the cell is in. Index 0 is the first row.
+     * @param column the index of the column the cell is in. Index 0 is the first column.
+     * @param aValue the value of the cell has in the puzzle. Value 0 is an UNKNOWN cell.  <br>
+     *               Only UNKNOWN cells will have the attribute, possible set, non-empty.
+     */
     public Cell(int row, int column, int aValue){
         rowIndex = row;
         columnIndex = column;
@@ -51,10 +58,6 @@ public class Cell {
         }
     }
 
-    public LinkedList<Cell> getRow() {
-        return lines.get(ROW_INDEX);
-    }
-
     public int getRowIndex() {
         return rowIndex;
     }
@@ -62,6 +65,8 @@ public class Cell {
     public int getColumnIndex() {
         return columnIndex;
     }
+
+    public int getValue() { return value; }
 
     public void setRow(LinkedList<Cell> aRow) {
         lines.add(ROW_INDEX, aRow);
@@ -82,9 +87,12 @@ public class Cell {
     public CellValueType getType() {
         return type;
     }
-    
-    // set the value for the cell and clear the possible values
-    // removes this value from the associating row, column and subgrid
+
+    /**
+     * This method updates the Cell with the found value.
+     * It subsequently removes the found value from the associated row, column and subgrid.
+     * @param aValue the found value for this cell.
+     */
     public void foundValue(int aValue) {
         System.out.println("foundValue(" + aValue + ") in cell: " + toString());
         value = aValue;
@@ -94,8 +102,11 @@ public class Cell {
         // removes this value from the associating row, column and subgrid
         removeValue(value);
     }
-    
-    // removes all the values in the input set from the possible set for this cell.
+
+    /**
+     * Removes all the values in the input set from the possible set for this cell.
+     * @param existing a set of known numbers.
+     */
     public void removeMultipleValuesFromSet(Set<Integer> existing){
         System.out.println("removeMultipleValuesFromSet(" + existing.toString() + ") in cell " + toString());
         possible.removeAll(existing);
@@ -108,7 +119,11 @@ public class Cell {
         }
     }
 
-    // remove the single value in the input parameter from the possible set for this cell.
+    /**
+     * Removes the single value in the input parameter from the possible set for this cell.
+     * @param aValue a value that is found in this cell.
+     */
+    //
     public void removeOneValueFromSet(int aValue){
         System.out.println("removeOneValueFromSet(" + aValue + ") in cell " + toString());
         possible.remove(aValue);
@@ -119,9 +134,13 @@ public class Cell {
             }
         }
     }
-    
-    // removes the passed in value from possible values for all cells 
-    // that are in the same column, row and subgrid as this cell.
+
+    /**
+     * Removes the passed in value from possible values for all cells
+     * that are in the same column, row and subgrid as this cell.
+     * @param aValue a derived value.
+     */
+    //
     public void removeValue(int aValue) {
         System.out.println(">> RemoveValue(" + aValue + ") from " + toString());
         for (Cell cell: lines.get(ROW_INDEX)) {
@@ -141,7 +160,11 @@ public class Cell {
         }
         System.out.println("<< RemoveValue(" + aValue + ") from " + toString());
     }
-    
+
+    /**
+     * @return (rowIndex, columnIndex, value). If it is an UNKNOWN cell, the possible values <br>
+     *     are also returned.
+     */
     @Override
     public String toString() {
         String ret;
