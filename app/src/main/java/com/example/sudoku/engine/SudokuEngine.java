@@ -169,7 +169,7 @@ public class SudokuEngine {
      * This method returns the puzzle including all derived cells.
      * @return the grid in form of a List of LinkedList of Cells.
      */
-    public List<LinkedList<Cell>> getRows() {
+    protected List<LinkedList<Cell>> getRows() {
         return rows;
     }
 
