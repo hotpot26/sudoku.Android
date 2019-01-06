@@ -24,13 +24,15 @@ public class SudokuEngine {
     private List<LinkedList<Cell>> rows = new ArrayList<>();
     private List<LinkedList<Cell>> columns = new ArrayList<>();
     private List<LinkedList<Cell>> subgrids = new ArrayList<>();
-    
+
     private int derived = 0;
     private int unknown = 0;
     private int given = 0;
 
+    private int [][] grid;
+
     public void initialize(String gridString) {
-        int [][] grid = new int[NUMBER_OF_CELLS][NUMBER_OF_CELLS];
+        grid = new int[NUMBER_OF_CELLS][NUMBER_OF_CELLS];
         int row, column;
         int index = 0;
 
@@ -48,9 +50,11 @@ public class SudokuEngine {
     }
     /**
      * Initializes the Cell data structure using the grid
-     * @param grid the input puzzle.
+     * @param puzzle the input puzzle.
      */
-    public void initialize(int[][] grid) {
+    public void initialize(int[][] puzzle) {
+        grid = puzzle;
+
         // instantiate the rows that store the cells and columns that cross reference the cells
         for (int i = 0; i < NUMBER_OF_CELLS; i++) {
             rows.add(i, new LinkedList<Cell> ());
@@ -88,11 +92,6 @@ public class SudokuEngine {
                 }
             }
         }
-
-        // print the parsed in puzzle
-        for (LinkedList<Cell> i : rows) {
-            System.out.println(i.toString());
-        }
     }
 
     /**
@@ -109,14 +108,13 @@ public class SudokuEngine {
      * TODO: refactor this method so findAllPossibleNumber is less extensive.
      */
     public int solve() {
-        int ret = 0;
+        int ret = 1;
         if (given == 0) {
             return 3;
         }
 
         int previous = 0;
         while ((unknown != 0) && (previous != unknown)) {
-            System.out.println("Top while loop");
             fillGrid();
             previous = unknown;
 
@@ -125,47 +123,72 @@ public class SudokuEngine {
                 if (isSolved()) {
                     ret = 0;
                 } else {
-                    System.out.println("Solution is invalid");
                     ret = 2;
                 }
             } else {
-                // still unknown cells. prepare for backtracking algorithm by using a value
-                // from the first cell that has two possible values.
+                // still unknown cells. prepare for backtracking algorithm.
                 // create a list of unknown cells
-                //
-                ret = 1;
-                System.out.println("breaking out here for now to avoid infinite loop");
-                break;
-                // backup the possible set first.
+                // update the grid with the Cell content
+                printResult();
+                updateGrid();
+
+                BacktrackingAlgorithm engine = new BacktrackingAlgorithm(grid);
+                if (engine.solve()) {
+                    ret = 0;
+                    updateCell();
+                    previous = unknown = 0;
+                } else {
+                    ret = 1;
+                    System.out.println("breaking out here for now to avoid infinite loop");
+                    break;
+                }
             }
         }
 
         return ret;
     }
 
+    /*
+     * Update the grid content with the updated values of the Cells.
+     */
+    private void updateGrid() {
+        for (LinkedList<Cell> row: rows) {
+            for (Cell cell: row) {
+                grid[cell.getRowIndex()][cell.getColumnIndex()] = cell.getValue();
+            }
+        }
+    }
+
+    private void updateCell() {
+        for (LinkedList<Cell> row: rows) {
+            for (Cell cell : row) {
+                if (cell.getValue() == 0) {
+                    cell.setValue(grid[cell.getRowIndex()][cell.getColumnIndex()]);
+                }
+            }
+        }
+    }
     private void fillGrid() {
         // find possible numbers based on cells in row
         // should iterate until unknown is zero or unknown is unchanged at which
         // case there is no solution.
         int previousUnknown = 0;
-        int iterations = 0;
 
         boolean filled = false;
         while (!filled && (previousUnknown != unknown)) {
-            System.out.println("i = " + iterations);
             List<LinkedList<Cell>> orientation;
             for (int i = 0; i < 3; i++) {
                 switch (i) {
                     case 0:
-                        System.out.println("Find possible numbers based on cells in rows");
+//                        System.out.println("Find possible numbers based on cells in rows");
                         orientation = rows;
                         break;
                     case 1:
-                        System.out.println("Find possible numbers based on cells in columns");
+//                        System.out.println("Find possible numbers based on cells in columns");
                         orientation = columns;
                         break;
                     default:
-                        System.out.println("Find possible numbers based on cells in subgrids");
+//                        System.out.println("Find possible numbers based on cells in subgrids");
                         orientation = subgrids;
                         break;
                 }
@@ -179,8 +202,6 @@ public class SudokuEngine {
 
             previousUnknown = unknown;
             filled = isFilled();
-            printResult();
-            iterations ++;
         }
     }
 
@@ -207,14 +228,12 @@ public class SudokuEngine {
                 existingNumbers.add(cell.getValue());
             }
         }
-        System.out.println("Existing numbers: " + existingNumbers.toString());
-        
-        // for every cell with possible values, remove the known numbers 
+
+        // for every cell with possible values, remove the known numbers
         for (Cell cell : line) {
             if (cell.getValue() == 0) {
                 cell.removeSetFromPossible(existingNumbers);
             }
-            System.out.println(cell.toString());
         }
     }
 
@@ -246,8 +265,8 @@ public class SudokuEngine {
      */
     // find unique number from all possible values within the linked list
     private void findUniquePossibleValues(LinkedList<Cell> line) {
-        System.out.println("Find unique possible values");
-
+//        System.out.println("Find unique possible values");
+//
         int[] possibleValueCount = getPossibleValueCounts(line);
         
         int index = 0;
@@ -273,7 +292,7 @@ public class SudokuEngine {
      * @param line the row, column or subgrid that this operations applies to.
      */
     private void findPreemptiveSet(LinkedList<Cell> line) {
-        System.out.println("Handle preemptive set.");
+//        System.out.println("Handle preemptive set.");
         boolean foundPreemptiveSet = false;
         HashSet<Integer> previousPossibleValue = new HashSet<>();
 
@@ -389,5 +408,18 @@ public class SudokuEngine {
             System.out.println();
         }
         System.out.println("Given: " + given + ", derived: " + derived + ", unknown: " + unknown);
+    }
+
+    @Override
+    public String toString() {
+        String returnString = "";
+
+        for (int[] row : grid) {
+            for (int number : row) {
+                returnString += " " + number;
+            }
+            returnString += "\n";
+        }
+        return returnString;
     }
 }

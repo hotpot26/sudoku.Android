@@ -1,19 +1,16 @@
 package com.example.sudoku.engine;
 
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-
 /**
- * unit test for the engine with various puzzles
+ * unit test for the SudokuEngine with various puzzles
  *
  */
     public class SudokuEngineTest {
 
     @Test
     /* 25 unknown. multiple possible solutions */
+    //856014730090000000240000160062059300031802450005340920024000073000000010018630294
     public void originalPuzzleTest() {
         int [][] grid = {
                 {8, 5, 6, 0, 1, 4, 7, 3, 0},
@@ -31,7 +28,8 @@ import static org.junit.Assert.assertEquals;
 
         engine.initialize(grid);
         int ret = engine.solve();
-        org.junit.Assert.assertEquals(1, ret);
+        System.out.println(engine.toString());
+        org.junit.Assert.assertEquals(0, ret);
     }
 
     @Test
@@ -54,7 +52,8 @@ import static org.junit.Assert.assertEquals;
 
         engine.initialize(grid);
         int ret = engine.solve();
-        org.junit.Assert.assertEquals(1, ret);
+        System.out.println(engine.toString());
+        org.junit.Assert.assertEquals(0, ret);
     }
 
     @Test
@@ -118,6 +117,7 @@ import static org.junit.Assert.assertEquals;
 
         engine.initialize(grid);
         int ret = engine.solve();
+        System.out.println(engine.toString());
         org.junit.Assert.assertEquals(0, ret);
     }
 
@@ -143,7 +143,7 @@ import static org.junit.Assert.assertEquals;
     }
 
     @Test
-    public void superhardTest() {
+    public void superhard1Test() {
         int [][] grid = {
                 {0, 0, 0, 0, 0, 0, 0, 0, 0},
                 {8, 0, 0, 0, 2, 0, 0, 0, 5},
@@ -160,6 +160,30 @@ import static org.junit.Assert.assertEquals;
 
         engine.initialize(grid);
         int ret = engine.solve();
+        System.out.println(engine.toString());
         org.junit.Assert.assertEquals(0, ret);
     }
+
+    @Test
+    public void superhard2Test() {
+        int [][] grid = {
+                {4, 0, 0, 0, 0, 0, 8, 0, 5},
+                {0, 3, 0, 0, 0, 0, 0, 0, 0},
+                {0, 0, 0, 7, 0, 0, 0, 0, 0},
+                {0, 2, 0, 0, 0, 0, 0, 6, 0},
+                {0, 0, 0, 0, 8, 0, 4, 0, 0},
+                {0, 0, 0, 0, 1, 0, 0, 0, 0},
+                {0, 0, 0, 6, 0, 3, 0, 7, 0},
+                {5, 0, 0, 2, 0, 0, 0, 0, 0},
+                {1, 0, 4, 0, 0, 0, 0, 0, 0}
+        };
+
+        SudokuEngine engine = new SudokuEngine();
+
+        engine.initialize(grid);
+        int ret = engine.solve();
+        System.out.println(engine.toString());
+        org.junit.Assert.assertEquals(0, ret);
+    }
+
 }

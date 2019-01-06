@@ -69,9 +69,7 @@ public class Cell {
 
     public int getValue() { return value; }
 
-    public void setRow(LinkedList<Cell> aRow) {
-        lines.add(ROW_INDEX, aRow);
-    }
+    public void setRow(LinkedList<Cell> aRow) { lines.add(ROW_INDEX, aRow); }
     
     public void setColumn(LinkedList<Cell> aCol) {
         lines.add(COLUMN_INDEX, aCol);
@@ -80,7 +78,7 @@ public class Cell {
     public void setSubgrid(LinkedList<Cell> sub) {
         lines.add(SUBGRID_INDEX, sub);
     }
-    
+
     public HashSet<Integer> getPossibleValues() {
         return possible;
     }
@@ -89,13 +87,17 @@ public class Cell {
         return type;
     }
 
+    public void setValue(int number) {
+        value = number;
+        type = CellValueType.DERIVED;
+        possible.clear();
+    }
     /**
      * Removes all the values in the input set from the possible set for this cell.
      * @param existing a set of known numbers.
      */
     public void removeSetFromPossible(Set<Integer> existing){
-        System.out.println("removeSetFromPossible(" + existing.toString() + ") in cell " + toString());
-
+//        System.out.println("removeSetFromPossible(" + existing.toString() + ") in cell " + toString());
         possible.removeAll(existing);
         checkPossibleValue();
     }
@@ -119,13 +121,11 @@ public class Cell {
      * @param aValue the found value for this cell.
      */
     public void foundValue(int aValue) {
-        System.out.println("foundValue(" + aValue + ") in cell: " + toString());
-        value = aValue;
-        type = CellValueType.DERIVED;
-        possible.clear();
+//        System.out.println("foundValue(" + aValue + ") in cell: " + toString());
+        setValue(aValue);
 
         // removes this value from the associating row, column and subgrid
-        removeValue(value);
+        removeValueFromOtherCells(value);
     }
 
     /**
@@ -134,10 +134,10 @@ public class Cell {
      * @param aValue a derived value.
      */
     //
-    public void removeValue(int aValue) {
+    public void removeValueFromOtherCells(int aValue) {
         HashSet<Integer> set = new HashSet<>();
         set.add(aValue);
-        System.out.println(">> " + toString() + ".removeValue " + set.toString() + ".");
+//        System.out.println(">> " + toString() + ".removeValueFromOtherCells " + set.toString() + ".");
 
         for (Cell cell: lines.get(ROW_INDEX)) {
             if (cell.value == 0) {
@@ -154,7 +154,7 @@ public class Cell {
                 cell.removeSetFromPossible(set);
             }
         }
-        System.out.println(">> " + toString() + ".removeValue " + set.toString() + ".");
+//        System.out.println(">> " + toString() + ".removeValueFromOtherCells " + set.toString() + ".");
     }
 
     /**
