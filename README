@@ -12,6 +12,11 @@ mentioned Activity use SnackBar to display success or failure messages of the di
 The display of the puzzle result onto the board is supported by a base class, PuzzleActivity. NewPuzzleActivity
 and OriginalPuzzleActivity are subclasses of the PuzzleActivity.
 
+A new puzzle can be input from the main screen. The users input the series of digits into the text field 
+underneath the 'New' button. The input must be 81 characters in length. If this is not satisfied, an empty grid will be
+displayed in the 'NewPuzzleActivity' subscreen. The order to input the digits is first by row, then by column.
+The user can then go back to the main screen to reenter the number. zero (0) is used to represent empty cells.
+
 The Engine of the solver is located under com.example.sudoku.engine. It has two public methods: initialize() 
 and solve(). JUnit test cases are used to test the engine against various puzzles.
 
