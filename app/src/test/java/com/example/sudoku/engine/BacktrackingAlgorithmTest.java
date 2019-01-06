@@ -53,26 +53,4 @@ public class BacktrackingAlgorithmTest {
         System.out.println(engine.toString());
         org.junit.Assert.assertTrue(ret);
     }
-
-    @Test
-    public void superhard2Test() {
-        int [][] grid = {
-                {4, 0, 0, 0, 0, 0, 8, 0, 5},
-                {0, 3, 0, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 7, 0, 0, 0, 0, 0},
-                {0, 2, 0, 0, 0, 0, 0, 6, 0},
-                {0, 0, 0, 0, 8, 0, 4, 0, 0},
-                {0, 0, 0, 0, 1, 0, 0, 0, 0},
-                {0, 0, 0, 6, 0, 3, 0, 7, 0},
-                {5, 0, 0, 2, 0, 0, 0, 0, 0},
-                {1, 0, 4, 0, 0, 0, 0, 0, 0}
-        };
-
-        SudokuEngine engine = new SudokuEngine();
-
-        engine.initialize(grid);
-        int ret = engine.solve();
-        System.out.println(engine.toString());
-        org.junit.Assert.assertEquals(0, ret);
-    }
 }

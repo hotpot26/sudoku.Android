@@ -100,7 +100,6 @@ import org.junit.Test;
     }
 
     @Test
-    /* 31 unknown */
     public void hard1Test() {
         int [][] grid = {
                 {9, 0, 0, 8, 7, 1, 0, 4, 3},
