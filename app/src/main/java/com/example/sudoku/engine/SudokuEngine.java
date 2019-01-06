@@ -29,6 +29,23 @@ public class SudokuEngine {
     private int unknown = 0;
     private int given = 0;
 
+    public void initialize(String gridString) {
+        int [][] grid = new int[NUMBER_OF_CELLS][NUMBER_OF_CELLS];
+        int row, column;
+        int index = 0;
+
+        // read in the puzzle string into a grid.
+        for (char c : gridString.toCharArray()) {
+            row = index / NUMBER_OF_CELLS;
+            column = index % NUMBER_OF_CELLS;
+
+            // guaranteed to be a digit because of the constraint during the input.
+            grid[row][column] = Character.getNumericValue(c);
+            index++;
+        }
+
+        initialize(grid);
+    }
     /**
      * Initializes the Cell data structure using the grid
      * @param grid the input puzzle.

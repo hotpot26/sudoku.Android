@@ -162,6 +162,4 @@ import static org.junit.Assert.assertEquals;
         int ret = engine.solve();
         org.junit.Assert.assertEquals(0, ret);
     }
-
-
 }
