@@ -3,7 +3,6 @@
     <string name="button_original">Original</string>
     <string name="button_new">New</string>
     <string name="enter_new_puzzle">Please enter the new puzzle here then press New.</string>
-    <string name="invalid_puzzle">The string must only contain characters 0 to 9.</string>
     <string name="not_enough_numbers">There must be 81 numbers in the string.</string>
     <string name="button_solve">Solve</string>
     <string name="message_no_solution">The puzzle has outsmarted me.</string>

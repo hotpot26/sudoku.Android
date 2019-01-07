@@ -20,7 +20,7 @@ public class NewPuzzleActivity extends PuzzleActivity {
 
         // if the length of the puzzle is less than 81, return.
         if (newPuzzle.length() != NUMBER_OF_CELLS * NUMBER_OF_CELLS) {
-            Snackbar.make(findViewById(R.id.myCoordinatorLayout), R.string.invalid_puzzle,
+            Snackbar.make(findViewById(R.id.myCoordinatorLayout), R.string.not_enough_numbers,
                     Snackbar.LENGTH_SHORT)
                     .show();
             return;

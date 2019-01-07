@@ -108,41 +108,31 @@ public class SudokuEngine {
      * TODO: refactor this method so findAllPossibleNumber is less extensive.
      */
     public int solve() {
-        int ret = 1;
+        int ret;
         if (given == 0) {
             return 3;
         }
 
-        int previous = 0;
-        while ((unknown != 0) && (previous != unknown)) {
-            fillGrid();
-            previous = unknown;
+        fillGrid();
 
-            // check only if all the Cells are filled.
-            if (isFilled()) {
-                if (isSolved()) {
-                    ret = 0;
-                } else {
-                    ret = 2;
-                }
-            } else {
-                // still unknown cells. prepare for backtracking algorithm.
-                // create a list of unknown cells
-                // update the grid with the Cell content
-                printResult();
-                updateGrid();
-
-                BacktrackingAlgorithm engine = new BacktrackingAlgorithm(grid);
-                if (engine.solve()) {
-                    ret = 0;
-                    updateCell();
-                    previous = unknown = 0;
-                } else {
-                    ret = 1;
-                    System.out.println("breaking out here for now to avoid infinite loop");
-                    break;
-                }
+        if (isFilled()) {
+            if (isSolved()) {
+                return 0;
             }
+        } else {
+            // still unknown cells. prepare for backtracking algorithm.
+            // create a list of unknown cells
+            // update the grid with the Cell content
+            updateGrid();
+        }
+        printResult();
+
+        BacktrackingAlgorithm engine = new BacktrackingAlgorithm(grid);
+        if (engine.solve()) {
+            ret = 0;
+            updateCell();
+        } else {
+            ret = 1;
         }
 
         return ret;
