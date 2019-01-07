@@ -1,35 +1,64 @@
 This document describes the implementation and information on 
 the Sudoku Solver.
 
+I submitted two Android Apps. They are located under: https://github.com/hotpot26. The repositories are:
+sudoku.Android and sudoku_dlx.
+
 1. Implementation
-The Sudoku Solver is an Android App. Its main screen displays two buttons, 'ORIGINAL' and 'NEW'. Each button
-displays a Sudoku grid, with a 'SOLVE' button on the bottom of the screen. 
+1.0 GUI
+The main screen displays two buttons, 'ORIGINAL' and 'NEW'. Each button displays a Sudoku grid, with a 
+'SOLVE' button on the bottom of the screen. 
+
+A new puzzle can be input from the main screen. A series of digits is entered into the text field 
+underneath the 'New' button. The input must be 81 characters in length. If this is not satisfied, an empty 
+grid will be displayed in the subscreen. Zero (0) is used to represent empty cells. The order to input the 
+digits is first by row, then by column. The user can then go back to the main screen to reenter the number. 
 
 Android studio was used for development and testing of the app. The grid.xml is a shared resource between the 
-new and the original Sudoku puzzle Activities. ConstraintLayout is used in the grid resource definition. Both 
-mentioned Activity use SnackBar to display success or failure messages of the displayed result in the puzzle.
+new and the original Sudoku puzzle Activities. ConstraintLayout is used in the grid resource definition to
+support different display sizes. SnackBar is used to display messages.
 
 The display of the puzzle result onto the board is supported by a base class, PuzzleActivity. NewPuzzleActivity
 and OriginalPuzzleActivity are subclasses of the PuzzleActivity.
 
-A new puzzle can be input from the main screen. The users input the series of digits into the text field 
-underneath the 'New' button. The input must be 81 characters in length. If this is not satisfied, an empty grid will be
-displayed in the 'NewPuzzleActivity' subscreen. The order to input the digits is first by row, then by column.
-The user can then go back to the main screen to reenter the number. zero (0) is used to represent empty cells.
+1.1 History of the Implementated Engines
+I followed the recommendation and attempted to implement my own algorithm based on how I ususally manually solve
+the puzzles. I got stuck after I implemented (what was explained on line for the preemptive set and unique number
+identification). I then found three interesting papers on algorithms. They are:
+a. Dancing Links: https://www.ocf.berkeley.edu/~jchu/publicportal/sudoku/0011047.pdf
+b. Peter Norvig's Python implementation: http://norvig.com/sudoku.html
+c. Backtracking
 
-The Engine of the solver is located under com.example.sudoku.engine. It has two public methods: initialize() 
+I attempted to append a backtracking algorithm at the end of my implement where I was only able to solve a subset
+of the unknown Cells. The data structures I used needed a lot of refactoring before the Cell class can be utilized
+within the backtracking algorithm. Due to the time constraint, I decided to copy the result of my algorithm into
+a 2D grid and continue with the standard backtracking algorithm to finish the puzzle.
+
+I wanted to attempt to rewrite Peter Norvig's algorithm in Java, but was unable to do so with the time allotted.
+
+I think the correct approach to the Sudoku engine is to use the Dancking Links algorithm. So in addition to the 
+submission I have under com.example.sudoku.engine, I copied an implementation of DLX from the GitHub referenced
+in https://www.baeldung.com/java-sudoku. I integrated it also with the front end I implemented. This second 
+Android Studio project is under GitHub: XXX.
+
+1.2. My Engine
+My Engine is located under com.example.sudoku.engine. It has two public methods: initialize() 
 and solve(). JUnit test cases are used to test the engine against various puzzles.
 
-The implemented algorithm is based on how I manually solve Sudoku in the past. It only has a few of the sub solving 
-algorithms implemented. It is mostly similar to the approach of the Cook's algorithm 
-(http://www.ams.org/notices/200904/rtx090400460p.pdf, and Norwig's (http://norvig.com/sudoku.html). 
-My implementation does not include the last step of the forementioned algorithms, which is to use 
-backtracking to find further unknown values, after the solution has somewhat stalled.
+The implemented algorithm is based on how I manually solve Sudoku in the past. It includes a couple of the sub 
+solving algorithms implemented including the handling of preemptive set and unique number identification. It 
+is mostly similar to the approach of the Cook's algorithm (http://www.ams.org/notices/200904/rtx090400460p.pdf). 
 
-As a result, the initial puzzle included in the assignment is only partially solved by my implementation.
+If after the above elimination techniques, the puzzle is still not solved, the result is updated into a 2D grid. 
+Backtracking is applied to the more filled up grid to reduce the problem space.
+
+1.3. DLX Engine
+https://github.com/hotpot26/sudoku_dlx has the same GUI (with minor changes to account for the changes in the API
+of the DLX Engine), but using the Java implementation of the DLX from 
+https://github.com/eugenp/tutorials/tree/master/algorithms-miscellaneous-2/src/main/java/com/baeldung/algorithms/sudoku
 
 2. App build and deployment
-The code base can be found under: https://github.com/hotpot26/sudoku.Android/tree/master. Once the repository 
+The code base can be found under: https://github.com/hotpot26/sudoku.Android. Once the repository 
 has been cloned, Android Studio can be used to open the project and to build the project. 
 
 Use the Run feature from Android Studio to launch the app on either the Pixel API 25 (Android 7.1.1) Emulator,
